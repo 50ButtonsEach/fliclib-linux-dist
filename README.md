@@ -13,7 +13,7 @@
 * fliclib-cpp/ffi/samples/python/main.py - Sample Python2.7 code. Run with python2 main.py
 
 ## Supported platforms
-Binaries and libraries has been compiled for x86_64, i386, armv6l and armv7l. All code has been compiled and tested on Ubuntu 15.10 for desktop and Raspbian Jessy.
+Binaries and libraries has been compiled for x86_64, i386 and armv6l. All code has been compiled and tested on Ubuntu 15.10 for desktop and Raspbian Jessy. This means it should be compatible with desktop systems and both raspberrypi 1 & 2. 
 ## Bluetooth controllers
 We haven't tested compability with common Bluetooth controllers. The following devices has been tested and confirmed:
 * Plugable USB Bluetooth 4.0 Low Energy Micro Adapter
@@ -21,12 +21,17 @@ We haven't tested compability with common Bluetooth controllers. The following d
 ## Requirements
 ### Bluez
 Flic requires the latest bluez HEAD to work well
-### Build directives
+### Building
 git clone git://git.kernel.org/pub/scm/bluetooth/bluez.git
+
 cd bluez
+
 ./bootstrap
+
 ./configure --enable-experimental --enable-library
+
 make
+
 sudo make install
 
 ### Running
@@ -35,3 +40,11 @@ The easiest way to get started is to run bluetoothd directly from the src folder
 cd src
 sudo ./bluetoothd -nEd
 
+## Example
+In one terminal run ./bluetoothd -nEd
+
+In another terminal run ./daemon -l -f flic.sqlite3
+
+In a third terminal run ./flic
+
+In the third terminal enter the command 'startScan'. Now press your Flic button and wait for it to appear. When it does, enter the command 'stopScan'. Hold your Flic button for 8 seconds to make it public, and make sure that it glows read. Then enter the command 'connect MAC' where mac is the MAC address that appeared. The button should now connect and you will see click events appear.
