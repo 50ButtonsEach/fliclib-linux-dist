@@ -6,7 +6,7 @@ Any issues should be reported here on github.
 ## Whats included
 * `daemon` - This is the central daemon that manages all buttons. Run it with `./daemon -l -f flic.sqlite3`
 * `fliclib-cpp/flic` - This is a command line tool for managing the daemon.
-* `fliclib-cpp/flic.hph` - These are the header files for the C++ client library
+* `fliclib-cpp/flic.hpp` - These are the header files for the C++ client library
 * `fliclib-cpp/libflic.a` - This is the C++ client library
 * `fliclib-cpp/ffi/java/flic.jar` - Java bindings for the Flic client library
 * `fliclib-cpp/ffi/java/libflicjava.so` - Flic JNI library. The sample code expects this to be copied to `/usr/lib/libflicjava.so`
