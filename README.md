@@ -1,5 +1,8 @@
 # Flic SDK for Linux Beta
 
+## Feedback
+Any issues should be reported here on github.
+
 ## Whats included
 * `daemon` - This is the central daemon that manages all buttons. Run it with `./daemon -l -f flic.sqlite3`
 * `fliclib-cpp/flic` - This is a command line tool for managing the daemon. Type `help` to see available commands
@@ -13,10 +16,11 @@
 * `fliclib-cpp/ffi/samples/python/main.py` - Sample Python2.7 code. Run with `python2 main.py`
 
 ## Supported platforms
-Binaries and libraries has been compiled for `x86_64`, `i386` and `armv6l`. All code has been compiled and tested on Ubuntu 15.10 for desktop and Raspbian Jessy. This means it should be compatible with desktop systems and both raspberrypi 1 & 2. 
+Binaries and libraries has been compiled for `x86_64`, `i386` and `armv6l`. All code has been compiled and tested on Ubuntu 15.10 for desktop and Raspbian Jessy. This means it should be compatible with desktop systems and both raspberrypi 1 & 2. I have tried to make the binaries as portable as possible.
 ## Bluetooth controllers
-We haven't tested compability with common Bluetooth controllers. The following devices has been tested and confirmed:
+We haven't tested compability with all common Bluetooth controllers. The following devices has been tested and confirmed:
 * Plugable USB Bluetooth 4.0 Low Energy Micro Adapter
+* Broadcom BCM20702 Bluetooth 4.0
 
 ## Requirements
 ### Bluez
