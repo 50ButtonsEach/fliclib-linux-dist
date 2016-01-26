@@ -1,5 +1,9 @@
 # Flic SDK for Linux Beta
 
+## Download
+
+The library is distributed as a tarball and can be found under https://github.com/50ButtonsEach/fliclib-linux-dist/releases
+
 ## Feedback
 Any issues should be reported here on github.
 
