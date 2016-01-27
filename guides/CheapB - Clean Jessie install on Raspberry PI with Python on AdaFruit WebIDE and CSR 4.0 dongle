@@ -1,0 +1,122 @@
+Guide by CheapB
+
+Header says it all.. A couple of notes before we begin: 
+1) I am not an expert by any means, so feel free to comment or improve as you see fit
+2) Do not attach your BT dongle before the instructions call for it.
+
+3) It would be great if anyone have info on blueZ binaries pre-complied for RPI/Jessie. It is pretty painful to compile every time there is an update
+
+Lets get started:
+
+Download jessie (https://downloads.raspberrypi.org/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip) and install (https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
+
+Configure network connection etc - what you normally will do or google it. Do NOT attach your BT dongle yet! :-)
+
+Install Putty or similar on your regular PC for SSH access to the RPI
+
+via SSH or on the CLI:
+
+update all system packages:
+sudo apt-get update
+
+update all installed packages:
+sudo apt-get upgrade
+
+this will take a while
+optional: clean out installation files:
+sudo apt-get clean
+
+install Adafruit WebIDE (https://learn.adafruit.com/webide/installation)
+
+Backup your SD card with Win32DiskImager (for windows) or similar if you are on a different platform. This will save you a lot of time if you want a clean install when the next beta is out
+
+install needed packages for blueZ:
+
+sudo apt-get install libglib2.0-dev
+sudo apt-get install libdbus-1-dev
+sudo apt-get install libudev-dev
+sudo apt-get install automake
+sudo apt-get install libtool
+sudo apt-get install libical-dev
+sudo apt-get install libreadline-dev
+
+Install BlueZ:
+
+git clone git://git.kernel.org/pub/scm/bluetooth/bluez.git
+
+cd bluez
+
+./bootstrap
+
+this will take a while
+./configure --enable-experimental --enable-library
+
+this will take a while
+make
+
+time for coffee
+sudo make install
+
+sudo shutdown -h now
+
+Insert the BT dongle and restart
+
+login
+
+cd bluez/src
+
+sudo ./bluetoothd -nEd
+
+This should be kept active
+
+Open a new SSH session
+mkdir flic
+cd flic
+
+sudo wget https://github.com/50ButtonsEach/fliclib-linux-dist/releases/download/1-beta3/fliclib-linux.tar.gz
+
+This will change based on the release - go and grab the newest link from the release page https://github.com/50ButtonsEach/fliclib-linux-dist/releases
+sudo tar -zxvf fliclib-linux.tar.gz
+
+cd armv6l
+
+armv7l is currently not working on RPI
+sudo ./daemon -l -f flic.sqlite3
+
+This should be kept active
+
+Open a new SSH session
+
+cd flic/armv6l/fliclib-cpp
+
+sudo hciconfig hci0 up
+
+sudo ./flic
+
+scanStart
+press your button
+wait for button discovered message
+stopScan
+press and hold the button for 8 sec and select
+
+connect
+
+This may take a few tries as my button never glows in public mode. You know it was successfull when is says connected and start track button presses..
+
+exit flic with ctrl-C
+
+install Flic Python lib:
+cd ~/flic/armv6l/fliclib-cpp/ffi/python/flic/dist 
+sudo easy_install flic-0.1-py2.7.egg
+
+Test:
+start your AdaFruit WebIDE
+
+create a new python file
+
+copy and paste the attached test into your file and execute
+main.txt
+
+Test by pressing the button
+
+Have fun!
