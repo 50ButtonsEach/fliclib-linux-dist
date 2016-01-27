@@ -27,6 +27,18 @@ We haven't tested compability with all common Bluetooth controllers. The followi
 * Broadcom BCM20702 Bluetooth 4.0
 
 ## Requirements
+### Packages
+The following libraries should be installed on your system:
+```
+libglib2.0-0 
+libglib2.0-dev
+libdbus-1-dev
+libudev-dev
+automake
+libtool
+
+install with: sudo apt-get install or similar
+```
 ### Bluez
 Flic requires the latest bluez HEAD to work well
 ### Building
@@ -53,10 +65,15 @@ sudo ./bluetoothd -nEd
 ```
 
 ## Example
-In one terminal run `./bluetoothd -nEd`
+In one terminal run `sudo ./bluetoothd -nEd`
 
 In another terminal run `./daemon -l -f flic.sqlite3`
 
 In a third terminal run `./flic`
 
 In the third terminal enter the command `startScan`. Now press your Flic button and wait for it to appear. When it does, enter the command `stopScan`. Hold your Flic button for 8 seconds to make it public, and make sure that it glows read. Then enter the command `connect <MAC>` where MAC is the address that appeared during scan. The button should now connect and you will see click events appear.
+
+## Troubleshooting
+If you get the error message "D-Bus setup failed: Name already in use" when starting bluetoothd you can try "ps aux | grep blue" and then "sudo kill " for the appropriate process.
+
+Your bluetooth controller may be down for various reasons. Verify that it's up with ```hciconfig```, and if needed bring it up with ```sudo hciconfig hci0 up```
