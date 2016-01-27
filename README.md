@@ -8,16 +8,17 @@ The library is distributed as a tarball and can be found under https://github.co
 Any issues should be reported here on github.
 
 ## Whats included
+The release tarball include both library files and documentation for the Flic client library
 * `daemon` - This is the central daemon that manages all buttons. Run it with `./daemon -l -f flic.sqlite3`
-* `fliclib-cpp/flic` - This is a command line tool for managing the daemon.
+* `fliclib-cpp/doc` - HTML documentation for the C++ client library
+* `fliclib-cpp/flic` - This is a command line tool for managing the daemon. Type help to see available commands
 * `fliclib-cpp/flic.hpp` - These are the header files for the C++ client library
 * `fliclib-cpp/libflic.a` - This is the C++ client library
+* `fliclib-cpp/ffi/java/doc` - HTML documentation for the Java bindings for the Flic client library
 * `fliclib-cpp/ffi/java/flic.jar` - Java bindings for the Flic client library
 * `fliclib-cpp/ffi/java/libflicjava.so` - Flic JNI library. The sample code expects this to be copied to `/usr/lib/libflicjava.so`
+* `fliclib-cpp/ffi/python/doc` - HTML documentation for the Python2.7 bindings for the Flic client library
 * `fliclib-cpp/ffi/python/flic/dist/flic-0.1-py2.7.egg` - Python2.7 bindings for the Flic client library. Install with `sudo easy_install flic-0.1-py2.7.egg`
-* `fliclib-cpp/ffi/samples/java/Main.java` - Sample Java code. Run with `java -cp "../../java/flic.jar:." Main` 
-* `fliclib-cpp/ffi/samples/java/Makefile` - `Makefile` for the Java sample
-* `fliclib-cpp/ffi/samples/python/main.py` - Sample Python2.7 code. Run with `python2 main.py`
 
 ## Supported platforms
 Binaries and libraries has been compiled for `x86_64`, `i386` and `armv6l`. All code has been compiled and tested on Ubuntu 15.10 for desktop and Raspbian Jessy. This means it should be compatible with desktop systems and both raspberrypi 1 & 2. I have tried to make the binaries as portable as possible.
@@ -72,6 +73,33 @@ In another terminal run `./daemon -l -f flic.sqlite3`
 In a third terminal run `./flic`
 
 In the third terminal enter the command `startScan`. Now press your Flic button and wait for it to appear. When it does, enter the command `stopScan`. Hold your Flic button for 8 seconds to make it public, and make sure that it glows read. Then enter the command `connect <MAC>` where MAC is the address that appeared during scan. The button should now connect and you will see click events appear.
+
+## Samples
+### C++
+Compile with
+```
+CXXFLAGS="-I../../../fliclib-cpp/" LDFLAGS="-L../../../fliclib-cpp/"  make
+```
+Modify CXXFLAGS and LDFLAGS according to where fliclib-cpp is located.
+
+Run with 
+```
+./main
+```
+
+### Java
+Compile with
+```
+CLASSPATH="../../../fliclib-cpp/ffi/java/flic.jar:." make
+```
+Modify CLASSPATH according to where fliclib-cpp is located
+
+Run with
+```
+CLASSPATH="../../../fliclib-cpp/ffi/java/flic.jar:." java Main
+```
+### Python (2.7)
+Run with ```python2.7 main.py```
 
 ## Troubleshooting
 If you get the error message "D-Bus setup failed: Name already in use" when starting bluetoothd you can try "ps aux | grep blue" and then "sudo kill " for the appropriate process.
