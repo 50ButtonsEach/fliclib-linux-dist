@@ -55,7 +55,6 @@ public class Main {
 		    System.out.println("Uninitialized");
 		}
 	    };
-	System.out.println("start");
 	client.start(initializedCallback.getCallback(),
 		     uninitializedCallback.getCallback());
 	client.run();
