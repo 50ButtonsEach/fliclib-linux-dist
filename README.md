@@ -31,7 +31,7 @@ We haven't tested compability with all common Bluetooth controllers. The followi
 ### Packages
 The following libraries should be installed on your system:
 ```
-libglib2.0-0 
+libglib2.0-0
 libglib2.0-dev
 libdbus-1-dev
 libudev-dev
@@ -41,7 +41,7 @@ libtool
 install with: sudo apt-get install or similar
 ```
 ### Bluez
-Flic requires the latest bluez HEAD to work well
+Flic requires the latest bluez HEAD to work well (although bluez-5.37 seems to work good enough)
 ### Building
 ```
 git clone git://git.kernel.org/pub/scm/bluetooth/bluez.git
@@ -64,9 +64,14 @@ The easiest way to get started is to run bluetoothd directly from the src folder
 cd src
 sudo ./bluetoothd -nEd
 ```
-
+When running bluez from your distro, you may need to add the experimental flag via `systemctl edit bluetooth`:
+```
+[Service]
+ExecStart=
+ExecStart=/usr/lib/bluetooth/bluetoothd -E
+```
 ## Example
-In one terminal run `sudo ./bluetoothd -nEd`
+In one terminal run `sudo ./bluetoothd -nEd` or `systemctl start bluetooth`
 
 In another terminal run `./daemon -l -f flic.sqlite3`
 
@@ -82,7 +87,7 @@ CXXFLAGS="-I../../../fliclib-cpp/" LDFLAGS="-L../../../fliclib-cpp/"  make
 ```
 Modify CXXFLAGS and LDFLAGS according to where fliclib-cpp is located.
 
-Run with 
+Run with
 ```
 ./main
 ```
@@ -105,3 +110,5 @@ Run with ```python2.7 main.py```
 If you get the error message "D-Bus setup failed: Name already in use" when starting bluetoothd you can try "ps aux | grep blue" and then "sudo kill " for the appropriate process.
 
 Your bluetooth controller may be down for various reasons. Verify that it's up with ```hciconfig```, and if needed bring it up with ```sudo hciconfig hci0 up```
+
+If you get the error message `Failed to start scan: GDBus.Error:org.bluez.Error.NotReady: Resource Not Ready, 36`, make sure to power on your bluetooth adapter via `bluetoothctl`, `power on`
