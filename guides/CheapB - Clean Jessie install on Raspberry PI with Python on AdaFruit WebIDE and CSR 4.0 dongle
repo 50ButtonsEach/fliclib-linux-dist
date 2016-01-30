@@ -41,7 +41,6 @@ sudo apt-get install libical-dev
 sudo apt-get install libreadline-dev
 
 Install BlueZ:
-
 git clone git://git.kernel.org/pub/scm/bluetooth/bluez.git
 
 cd bluez
@@ -78,9 +77,8 @@ sudo wget https://github.com/50ButtonsEach/fliclib-linux-dist/releases/download/
 This will change based on the release - go and grab the newest link from the release page https://github.com/50ButtonsEach/fliclib-linux-dist/releases
 sudo tar -zxvf fliclib-linux.tar.gz
 
-cd armv6l
+Check your architecture with ```uname -m``` and cd into the corresponding directory.
 
-armv7l is currently not working on RPI
 sudo ./daemon -l -f flic.sqlite3
 
 This should be kept active
@@ -91,21 +89,26 @@ cd flic/armv6l/fliclib-cpp
 
 sudo hciconfig hci0 up
 
-sudo ./flic
+./flic
 
-scanStart
-press your button
-wait for button discovered message
+If this is the first time you connect your Flic, do the following:
+
+startScan
+press your button and wait for button discovered message
 stopScan
-press and hold the button for 8 sec and select
 
-connect
+If you already have connected your Flic, it should show up if you enter ``` list``` 
+
+press and hold the button for 8 sec and then enter
+
+connect __MAC__
 
 This may take a few tries as my button never glows in public mode. You know it was successfull when is says connected and start track button presses..
 
 exit flic with ctrl-C
 
 install Flic Python lib:
+
 cd ~/flic/armv6l/fliclib-cpp/ffi/python/flic/dist 
 sudo easy_install flic-0.1-py2.7.egg
 
