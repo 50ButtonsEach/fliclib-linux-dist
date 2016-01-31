@@ -8,7 +8,7 @@ Header says it all.. A couple of notes before we begin:
 
 Lets get started:
 
-Download jessie (https://downloads.raspberrypi.org/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip) and install (https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
+Download the raspbian jessie (https://downloads.raspberrypi.org/raspbian/images/raspbian-2015-11-24/2015-11-21-raspbian-jessie.zip) and install (https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
 
 Configure network connection etc - what you normally will do or google it. Do NOT attach your BT dongle yet! :-)
 
