@@ -77,7 +77,7 @@ In another terminal run `./daemon -l -f flic.sqlite3`
 
 In a third terminal run `./flic`
 
-In the third terminal enter the command `startScan`. Now press your Flic button and wait for it to appear. When it does, enter the command `stopScan`. Hold your Flic button for 8 seconds to make it public, and make sure that it glows read. Then enter the command `connect <MAC>` where MAC is the address that appeared during scan. The button should now connect and you will see click events appear.
+In the third terminal enter the command `startScan`. Now press your Flic button and wait for it to appear. When it does, enter the command `stopScan`. Hold your Flic button for 8 seconds to make it public, and make sure that it glows red. Then enter the command `connect <MAC>` where MAC is the address that appeared during scan. The button should now connect and you will see click events appear.
 
 ## Samples
 ### C++
