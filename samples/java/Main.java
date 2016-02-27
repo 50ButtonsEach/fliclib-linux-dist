@@ -51,7 +51,7 @@ public class Main {
 		}
 	    };
 	CallbackBool uninitializedCallback = new CallbackBool() {
-		public void callback() {
+		public void callback(boolean recoverable) {
 		    System.out.println("Uninitialized");
 		}
 	    };
