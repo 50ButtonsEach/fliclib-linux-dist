@@ -26,6 +26,7 @@ Binaries and libraries has been compiled for `x86_64`, `i386` and `armv6l`. All 
 We haven't tested compability with all common Bluetooth controllers. The following devices has been tested and confirmed:
 * Plugable USB Bluetooth 4.0 Low Energy Micro Adapter
 * Broadcom BCM20702 Bluetooth 4.0
+* Raspberry pi 3 model B
 
 ## Requirements
 ### Packages
