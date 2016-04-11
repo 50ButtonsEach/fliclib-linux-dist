@@ -45,6 +45,8 @@ git clone git://git.kernel.org/pub/scm/bluetooth/bluez.git
 
 cd bluez
 
+git checkout 5.37
+
 ./bootstrap
 
 this will take a while
