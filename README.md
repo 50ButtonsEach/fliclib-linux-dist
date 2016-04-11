@@ -42,10 +42,12 @@ libtool
 install with: sudo apt-get install or similar
 ```
 ### Bluez
-Flic requires the latest bluez HEAD to work well (although bluez-5.37 seems to work good enough)
+Flic requires a more recent version of Bluez than most distros provide. Users has reported problems with 5.38+, but 5.37 seems to work good.
 ### Building
 ```
 git clone git://git.kernel.org/pub/scm/bluetooth/bluez.git
+
+git checkout 5.37
 
 cd bluez
 
