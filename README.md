@@ -47,9 +47,9 @@ Flic requires a more recent version of Bluez than most distros provide. Users ha
 ```
 git clone git://git.kernel.org/pub/scm/bluetooth/bluez.git
 
-git checkout 5.37
-
 cd bluez
+
+git checkout 5.37
 
 ./bootstrap
 
