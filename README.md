@@ -1,11 +1,14 @@
 # Flic SDK for Linux Beta
 
+## Discussion (not code related)
+https://community.flic.io/topic/10/flic-for-pi3
+
+## Issues
+Please check out the issues tab here on GitHub
+
 ## Download
 
 The library is distributed as a tarball and can be found under https://github.com/50ButtonsEach/fliclib-linux-dist/releases
-
-## Feedback
-Any issues should be reported here on github.
 
 ## Whats included
 The release tarball include both library files and documentation for the Flic client library
