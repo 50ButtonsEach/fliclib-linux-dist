@@ -1,5 +1,15 @@
 # Flic SDK for Linux Beta
 
+## UPDATE
+
+First of all we at Shortcut Labs wants to thank all of you beta testers. Your feedback has made us realize that Bluez might not be ready to support Flic. The features we need in bluez are marked as experimental and there is a reason for that. This is the reason this repository hasn't seen any new releases in a while.
+
+However, we have been working on a new solution that's now ready to be released as a beta. We really believe that this new SDK will work much better, and we hope that you will try it out. The new SDK uses HCI instead of Bluez, and we have worked hard to reduce the number of dependencies. This means that we will support more platforms.
+
+The link to the new SDK will come here very soon.
+
+Cheers, Fabian from Shortcut Labs
+
 ## Discussion (not code related)
 https://community.flic.io/topic/10/flic-for-pi3
 
