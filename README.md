@@ -1,5 +1,11 @@
 # Flic SDK for Linux Beta
 
+## New SDK
+
+We have now released a new SDK for Linux, which can be found here: https://github.com/50ButtonsEach/fliclib-linux-hci
+
+We will keep this repository available, but won't do any development. In a month or so, we will evaluate the feedback and decide which repository to continue on.
+
 ## UPDATE
 
 First of all we at Shortcut Labs wants to thank all of you beta testers. Your feedback has made us realize that Bluez might not be ready to support Flic. The features we need in bluez are marked as experimental and there is a reason for that. This is the reason this repository hasn't seen any new releases in a while.
