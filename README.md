@@ -12,7 +12,7 @@ First of all we at Shortcut Labs wants to thank all of you beta testers. Your fe
 
 However, we have been working on a new solution that's now ready to be released as a beta. We really believe that this new SDK will work much better, and we hope that you will try it out. The new SDK uses HCI instead of Bluez, and we have worked hard to reduce the number of dependencies. This means that we will support more platforms.
 
-The link to the new SDK will come here very soon.
+The new SDK can be found at [fliclib-linux-hci](https://github.com/50ButtonsEach/fliclib-linux-hci).
 
 Cheers, Fabian from Shortcut Labs
 
